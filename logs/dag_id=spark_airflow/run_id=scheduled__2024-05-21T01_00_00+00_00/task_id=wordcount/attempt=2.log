@@ -1,0 +1,477 @@
+[2024-05-22T13:37:25.894+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow.wordcount scheduled__2024-05-21T01:00:00+00:00 [queued]>
+[2024-05-22T13:37:25.899+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow.wordcount scheduled__2024-05-21T01:00:00+00:00 [queued]>
+[2024-05-22T13:37:25.899+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2024-05-22T13:37:25.905+0000] {taskinstance.py:1380} INFO - Executing <Task(SparkSubmitOperator): wordcount> on 2024-05-21 01:00:00+00:00
+[2024-05-22T13:37:25.929+0000] {standard_task_runner.py:57} INFO - Started process 565 to run task
+[2024-05-22T13:37:25.946+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'spark_***', 'wordcount', 'scheduled__2024-05-21T01:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/spark_***.py', '--cfg-path', '/tmp/tmpmts9w6bo']
+[2024-05-22T13:37:25.956+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask wordcount
+[2024-05-22T13:37:26.034+0000] {task_command.py:415} INFO - Running <TaskInstance: spark_airflow.wordcount scheduled__2024-05-21T01:00:00+00:00 [running]> on host 555515bb1aeb
+[2024-05-22T13:37:26.143+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bagas Prakasa' AIRFLOW_CTX_DAG_ID='spark_***' AIRFLOW_CTX_TASK_ID='wordcount' AIRFLOW_CTX_EXECUTION_DATE='2024-05-21T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-21T01:00:00+00:00'
+[2024-05-22T13:37:26.158+0000] {base.py:73} INFO - Using connection ID 'spark-conn' for task execution.
+[2024-05-22T13:37:26.167+0000] {spark_submit.py:401} INFO - Spark-Submit cmd: spark-submit --master spark://192.168.165.3:7077 --name arrow-spark --deploy-mode client jobs/python/wordcount.py
+[2024-05-22T13:37:26.301+0000] {spark_submit.py:571} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-22T13:37:30.009+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkContext: Running Spark version 3.5.1
+[2024-05-22T13:37:30.013+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkContext: OS info Linux, 6.7.11-orbstack-00143-ge6b82e26cd22, aarch64
+[2024-05-22T13:37:30.013+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkContext: Java version 11.0.23
+[2024-05-22T13:37:30.078+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-05-22T13:37:30.184+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceUtils: ==============================================================
+[2024-05-22T13:37:30.188+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-05-22T13:37:30.188+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceUtils: ==============================================================
+[2024-05-22T13:37:30.188+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkContext: Submitted application: PythonWordCount
+[2024-05-22T13:37:30.215+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-05-22T13:37:30.225+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceProfile: Limiting resource is cpu
+[2024-05-22T13:37:30.225+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-05-22T13:37:30.310+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SecurityManager: Changing view acls to: ***
+[2024-05-22T13:37:30.311+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SecurityManager: Changing modify acls to: ***
+[2024-05-22T13:37:30.313+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SecurityManager: Changing view acls groups to:
+[2024-05-22T13:37:30.313+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SecurityManager: Changing modify acls groups to:
+[2024-05-22T13:37:30.313+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-05-22T13:37:30.662+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO Utils: Successfully started service 'sparkDriver' on port 45525.
+[2024-05-22T13:37:30.704+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkEnv: Registering MapOutputTracker
+[2024-05-22T13:37:30.784+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkEnv: Registering BlockManagerMaster
+[2024-05-22T13:37:30.810+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-05-22T13:37:30.810+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-05-22T13:37:30.814+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-05-22T13:37:30.836+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-db879970-6a87-42f6-a8f1-e23f8c5b63e4
+[2024-05-22T13:37:30.851+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-05-22T13:37:30.869+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:30 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-05-22T13:37:31.264+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-05-22T13:37:31.329+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-05-22T13:37:31.790+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:31 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://192.168.165.3:7077...
+[2024-05-22T13:37:31.939+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:31 INFO TransportClientFactory: Successfully created connection to /192.168.165.3:7077 after 87 ms (0 ms spent in bootstraps)
+[2024-05-22T13:37:32.694+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240522133732-0000
+[2024-05-22T13:37:32.752+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40275.
+[2024-05-22T13:37:32.753+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO NettyBlockTransferService: Server created on 555515bb1aeb:40275
+[2024-05-22T13:37:32.759+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-05-22T13:37:32.773+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240522133732-0000/0 on worker-20240522131124-192.168.165.5-44627 (192.168.165.5:44627) with 2 core(s)
+[2024-05-22T13:37:32.805+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20240522133732-0000/0 on hostPort 192.168.165.5:44627 with 2 core(s), 1024.0 MiB RAM
+[2024-05-22T13:37:32.807+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 555515bb1aeb, 40275, None)
+[2024-05-22T13:37:32.808+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240522133732-0000/1 on worker-20240522131124-192.168.165.6-40209 (192.168.165.6:40209) with 2 core(s)
+[2024-05-22T13:37:32.808+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20240522133732-0000/1 on hostPort 192.168.165.6:40209 with 2 core(s), 1024.0 MiB RAM
+[2024-05-22T13:37:32.814+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO BlockManagerMasterEndpoint: Registering block manager 555515bb1aeb:40275 with 434.4 MiB RAM, BlockManagerId(driver, 555515bb1aeb, 40275, None)
+[2024-05-22T13:37:32.823+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 555515bb1aeb, 40275, None)
+[2024-05-22T13:37:32.829+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 555515bb1aeb, 40275, None)
+[2024-05-22T13:37:33.866+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:33 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-05-22T13:37:34.646+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240522133732-0000/1 is now RUNNING
+[2024-05-22T13:37:34.669+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240522133732-0000/0 is now RUNNING
+[2024-05-22T13:37:37.295+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO SparkContext: Starting job: collect at /opt/***/jobs/python/wordcount.py:11
+[2024-05-22T13:37:37.373+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO DAGScheduler: Got job 0 (collect at /opt/***/jobs/python/wordcount.py:11) with 2 output partitions
+[2024-05-22T13:37:37.396+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO DAGScheduler: Final stage: ResultStage 0 (collect at /opt/***/jobs/python/wordcount.py:11)
+[2024-05-22T13:37:37.406+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO DAGScheduler: Parents of final stage: List()
+[2024-05-22T13:37:37.417+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO DAGScheduler: Missing parents: List()
+[2024-05-22T13:37:37.447+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at collect at /opt/***/jobs/python/wordcount.py:11), which has no missing parents
+[2024-05-22T13:37:37.904+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:37 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 5.9 KiB, free 434.4 MiB)
+[2024-05-22T13:37:38.061+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:38 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 434.4 MiB)
+[2024-05-22T13:37:38.065+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:38 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 555515bb1aeb:40275 (size: 3.9 KiB, free: 434.4 MiB)
+[2024-05-22T13:37:38.075+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:38 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2024-05-22T13:37:38.109+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:38 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (PythonRDD[1] at collect at /opt/***/jobs/python/wordcount.py:11) (first 15 tasks are for partitions Vector(0, 1))
+[2024-05-22T13:37:38.113+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:38 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+[2024-05-22T13:37:41.023+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.165.6:38498) with ID 1,  ResourceProfileId 0
+[2024-05-22T13:37:41.034+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.165.5:43080) with ID 0,  ResourceProfileId 0
+[2024-05-22T13:37:41.250+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.165.6:35129 with 434.4 MiB RAM, BlockManagerId(1, 192.168.165.6, 35129, None)
+[2024-05-22T13:37:41.254+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.165.5:38837 with 434.4 MiB RAM, BlockManagerId(0, 192.168.165.5, 38837, None)
+[2024-05-22T13:37:41.399+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.165.6, executor 1, partition 0, PROCESS_LOCAL, 7684 bytes)
+[2024-05-22T13:37:41.405+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:41 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.165.6, executor 1, partition 1, PROCESS_LOCAL, 7680 bytes)
+[2024-05-22T13:37:42.212+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:42 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.165.6:35129 (size: 3.9 KiB, free: 434.4 MiB)
+[2024-05-22T13:37:43.624+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:43 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0) (192.168.165.6 executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+[2024-05-22T13:37:43.636+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:43.637+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:43.640+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:43.642+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:43.644+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:43.645+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:43.645+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:43.646+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:43.647+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:43.647+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:43.648+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:43.652+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:43.652+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:43.652+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:572)
+[2024-05-22T13:37:43.653+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:784)
+[2024-05-22T13:37:43.653+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)
+[2024-05-22T13:37:43.654+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)
+[2024-05-22T13:37:43.655+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:105)
+[2024-05-22T13:37:43.658+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:49)
+[2024-05-22T13:37:43.659+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to(TraversableOnce.scala:366)
+[2024-05-22T13:37:43.661+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)
+[2024-05-22T13:37:43.661+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.to(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:43.662+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer(TraversableOnce.scala:358)
+[2024-05-22T13:37:43.662+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer$(TraversableOnce.scala:358)
+[2024-05-22T13:37:43.663+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toBuffer(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:43.663+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray(TraversableOnce.scala:345)
+[2024-05-22T13:37:43.664+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray$(TraversableOnce.scala:339)
+[2024-05-22T13:37:43.665+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toArray(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:43.665+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$2(RDD.scala:1049)
+[2024-05-22T13:37:43.666+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+[2024-05-22T13:37:43.666+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-05-22T13:37:43.666+0000] {spark_submit.py:571} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-05-22T13:37:43.667+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-05-22T13:37:43.668+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-05-22T13:37:43.669+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-05-22T13:37:43.669+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-05-22T13:37:43.669+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-05-22T13:37:43.670+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-05-22T13:37:43.670+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-05-22T13:37:43.671+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-05-22T13:37:43.671+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-05-22T13:37:43.672+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:43.672+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:43 INFO TaskSetManager: Lost task 1.0 in stage 0.0 (TID 1) on 192.168.165.6, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+[2024-05-22T13:37:43.672+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:43.673+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:43.673+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:43.673+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:43.674+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:43.676+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:43.678+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:43.678+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:43.679+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:43.679+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:43.679+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:43.680+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:43.680+0000] {spark_submit.py:571} INFO - ) [duplicate 1]
+[2024-05-22T13:37:43.680+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:43 INFO TaskSetManager: Starting task 1.1 in stage 0.0 (TID 2) (192.168.165.5, executor 0, partition 1, PROCESS_LOCAL, 7680 bytes)
+[2024-05-22T13:37:43.682+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:43 INFO TaskSetManager: Starting task 0.1 in stage 0.0 (TID 3) (192.168.165.6, executor 1, partition 0, PROCESS_LOCAL, 7684 bytes)
+[2024-05-22T13:37:44.042+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:44 INFO TaskSetManager: Lost task 0.1 in stage 0.0 (TID 3) on 192.168.165.6, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+[2024-05-22T13:37:44.043+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:44.043+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:44.044+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:44.044+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:44.045+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:44.045+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:44.045+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:44.046+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:44.046+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:44.049+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:44.050+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:44.050+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:44.050+0000] {spark_submit.py:571} INFO - ) [duplicate 2]
+[2024-05-22T13:37:44.050+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:44 INFO TaskSetManager: Starting task 0.2 in stage 0.0 (TID 4) (192.168.165.6, executor 1, partition 0, PROCESS_LOCAL, 7684 bytes)
+[2024-05-22T13:37:44.210+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:44 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.165.5:38837 (size: 3.9 KiB, free: 434.4 MiB)
+[2024-05-22T13:37:44.278+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:44 INFO TaskSetManager: Lost task 0.2 in stage 0.0 (TID 4) on 192.168.165.6, executor 1: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+[2024-05-22T13:37:44.284+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:44.289+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:44.294+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:44.295+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:44.295+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:44.295+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:44.296+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:44.296+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:44.296+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:44.296+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:44.296+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:44.297+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:44.297+0000] {spark_submit.py:571} INFO - ) [duplicate 3]
+[2024-05-22T13:37:44.297+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:44 INFO TaskSetManager: Starting task 0.3 in stage 0.0 (TID 5) (192.168.165.5, executor 0, partition 0, PROCESS_LOCAL, 7684 bytes)
+[2024-05-22T13:37:45.741+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSetManager: Lost task 0.3 in stage 0.0 (TID 5) on 192.168.165.5, executor 0: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+[2024-05-22T13:37:45.763+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:45.763+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:45.764+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:45.764+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:45.765+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:45.765+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:45.765+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.766+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:45.766+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:45.767+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.767+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:45.768+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:45.769+0000] {spark_submit.py:571} INFO - ) [duplicate 4]
+[2024-05-22T13:37:45.769+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 ERROR TaskSetManager: Task 0 in stage 0.0 failed 4 times; aborting job
+[2024-05-22T13:37:45.774+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-05-22T13:37:45.775+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSetManager: Lost task 1.1 in stage 0.0 (TID 2) on 192.168.165.5, executor 0: org.apache.spark.api.python.PythonException (Traceback (most recent call last):
+[2024-05-22T13:37:45.776+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:45.777+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:45.777+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:45.777+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:45.777+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:45.778+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:45.778+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.779+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:45.780+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:45.780+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.781+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:45.781+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:45.781+0000] {spark_submit.py:571} INFO - ) [duplicate 5]
+[2024-05-22T13:37:45.781+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-05-22T13:37:45.782+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSchedulerImpl: Cancelling stage 0
+[2024-05-22T13:37:45.786+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage cancelled: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 5) (192.168.165.5 executor 0): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+[2024-05-22T13:37:45.786+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:45.787+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:45.787+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:45.787+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:45.787+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:45.788+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:45.788+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.788+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:45.789+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:45.789+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.789+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:45.790+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:45.790+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:45.790+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:572)
+[2024-05-22T13:37:45.791+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:784)
+[2024-05-22T13:37:45.791+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+[2024-05-22T13:37:45.791+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+[2024-05-22T13:37:45.791+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+[2024-05-22T13:37:45.791+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2024-05-22T13:37:45.792+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2024-05-22T13:37:45.792+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.792+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)
+[2024-05-22T13:37:45.793+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)
+[2024-05-22T13:37:45.793+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:105)
+[2024-05-22T13:37:45.793+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:49)
+[2024-05-22T13:37:45.793+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to(TraversableOnce.scala:366)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.to(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer(TraversableOnce.scala:358)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer$(TraversableOnce.scala:358)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toBuffer(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.794+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray(TraversableOnce.scala:345)
+[2024-05-22T13:37:45.795+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray$(TraversableOnce.scala:339)
+[2024-05-22T13:37:45.795+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toArray(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.795+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$2(RDD.scala:1049)
+[2024-05-22T13:37:45.795+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+[2024-05-22T13:37:45.796+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-05-22T13:37:45.796+0000] {spark_submit.py:571} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-05-22T13:37:45.797+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-05-22T13:37:45.797+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-05-22T13:37:45.797+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-05-22T13:37:45.797+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-05-22T13:37:45.798+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-05-22T13:37:45.798+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-05-22T13:37:45.799+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-05-22T13:37:45.799+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-05-22T13:37:45.800+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-05-22T13:37:45.800+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:45.800+0000] {spark_submit.py:571} INFO - Driver stacktrace:
+[2024-05-22T13:37:45.800+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO DAGScheduler: ResultStage 0 (collect at /opt/***/jobs/python/wordcount.py:11) failed in 8.194 s due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 5) (192.168.165.5 executor 0): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+[2024-05-22T13:37:45.801+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:45.801+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:45.801+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:45.802+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.803+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:45.803+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:45.803+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:572)
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:784)
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+[2024-05-22T13:37:45.804+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:105)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:49)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to(TraversableOnce.scala:366)
+[2024-05-22T13:37:45.805+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.to(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer(TraversableOnce.scala:358)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer$(TraversableOnce.scala:358)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toBuffer(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray(TraversableOnce.scala:345)
+[2024-05-22T13:37:45.806+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray$(TraversableOnce.scala:339)
+[2024-05-22T13:37:45.807+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toArray(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:45.807+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$2(RDD.scala:1049)
+[2024-05-22T13:37:45.807+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+[2024-05-22T13:37:45.808+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-05-22T13:37:45.808+0000] {spark_submit.py:571} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-05-22T13:37:45.808+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-05-22T13:37:45.808+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-05-22T13:37:45.808+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-05-22T13:37:45.809+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-05-22T13:37:45.809+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-05-22T13:37:45.809+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-05-22T13:37:45.809+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-05-22T13:37:45.810+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-05-22T13:37:45.810+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-05-22T13:37:45.810+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:45.810+0000] {spark_submit.py:571} INFO - Driver stacktrace:
+[2024-05-22T13:37:45.810+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:45 INFO DAGScheduler: Job 0 failed: collect at /opt/***/jobs/python/wordcount.py:11, took 8.502688 s
+[2024-05-22T13:37:45.953+0000] {spark_submit.py:571} INFO - Traceback (most recent call last):
+[2024-05-22T13:37:45.955+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 11, in <module>
+[2024-05-22T13:37:45.955+0000] {spark_submit.py:571} INFO - for word in wordCounts.collect():
+[2024-05-22T13:37:45.955+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:45.955+0000] {spark_submit.py:571} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/rdd.py", line 1833, in collect
+[2024-05-22T13:37:45.957+0000] {spark_submit.py:571} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-05-22T13:37:45.958+0000] {spark_submit.py:571} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2024-05-22T13:37:45.958+0000] {spark_submit.py:571} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2024-05-22T13:37:46.007+0000] {spark_submit.py:571} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+[2024-05-22T13:37:46.008+0000] {spark_submit.py:571} INFO - : org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 5) (192.168.165.5 executor 0): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:46.009+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:46.010+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:46.010+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:46.010+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:46.010+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:46.012+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:46.012+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:46.012+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:46.012+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:572)
+[2024-05-22T13:37:46.012+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:784)
+[2024-05-22T13:37:46.013+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+[2024-05-22T13:37:46.013+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)
+[2024-05-22T13:37:46.014+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:105)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:49)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to(TraversableOnce.scala:366)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.to(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer(TraversableOnce.scala:358)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer$(TraversableOnce.scala:358)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toBuffer(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.015+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray(TraversableOnce.scala:345)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray$(TraversableOnce.scala:339)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toArray(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$2(RDD.scala:1049)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-05-22T13:37:46.016+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - Driver stacktrace:
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+[2024-05-22T13:37:46.017+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at scala.Option.foreach(Option.scala:407)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+[2024-05-22T13:37:46.018+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+[2024-05-22T13:37:46.019+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-05-22T13:37:46.019+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1049)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.withScope(RDD.scala:410)
+[2024-05-22T13:37:46.020+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.collect(RDD.scala:1048)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:195)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2024-05-22T13:37:46.021+0000] {spark_submit.py:571} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - Caused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1247, in main
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - process()
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/worker.py", line 1239, in process
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - serializer.dump_stream(out_iter, outfile)
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 274, in dump_stream
+[2024-05-22T13:37:46.022+0000] {spark_submit.py:571} INFO - vs = list(itertools.islice(iterator, batch))
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/util.py", line 83, in wrapper
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - return f(*args, **kwargs)
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - ^^^^^^^^^^^^^^^^^^
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - File "/opt/***/jobs/python/wordcount.py", line 9, in <lambda>
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - AttributeError: 'tuple' object has no attribute 'reduceByKey'
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:572)
+[2024-05-22T13:37:46.023+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:784)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:105)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:49)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to(TraversableOnce.scala:366)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.to(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.024+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer(TraversableOnce.scala:358)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toBuffer$(TraversableOnce.scala:358)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toBuffer(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray(TraversableOnce.scala:345)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at scala.collection.TraversableOnce.toArray$(TraversableOnce.scala:339)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.InterruptibleIterator.toArray(InterruptibleIterator.scala:28)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.rdd.RDD.$anonfun$collect$2(RDD.scala:1049)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2438)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-05-22T13:37:46.025+0000] {spark_submit.py:571} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-05-22T13:37:46.026+0000] {spark_submit.py:571} INFO - 
+[2024-05-22T13:37:46.143+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-05-22T13:37:46.144+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-05-22T13:37:46.158+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO SparkUI: Stopped Spark web UI at http://555515bb1aeb:4040
+[2024-05-22T13:37:46.162+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-05-22T13:37:46.165+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-05-22T13:37:46.328+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-05-22T13:37:46.568+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO MemoryStore: MemoryStore cleared
+[2024-05-22T13:37:46.580+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO BlockManager: BlockManager stopped
+[2024-05-22T13:37:46.622+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-05-22T13:37:46.632+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-05-22T13:37:46.657+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO SparkContext: Successfully stopped SparkContext
+[2024-05-22T13:37:46.657+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO ShutdownHookManager: Shutdown hook called
+[2024-05-22T13:37:46.658+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO ShutdownHookManager: Deleting directory /tmp/spark-036f6aa5-9c37-4e7e-8979-139c1132da59
+[2024-05-22T13:37:46.660+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO ShutdownHookManager: Deleting directory /tmp/spark-8c10f536-4217-4b2e-b677-968dd1ab2303
+[2024-05-22T13:37:46.667+0000] {spark_submit.py:571} INFO - 24/05/22 13:37:46 INFO ShutdownHookManager: Deleting directory /tmp/spark-036f6aa5-9c37-4e7e-8979-139c1132da59/pyspark-843edf0e-f632-4cd9-be7f-d9c3147d5049
+[2024-05-22T13:37:46.847+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 502, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://192.168.165.3:7077 --name arrow-spark --deploy-mode client jobs/python/wordcount.py. Error code is: 1.
+[2024-05-22T13:37:46.861+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=spark_***, task_id=wordcount, execution_date=20240521T010000, start_date=20240522T133725, end_date=20240522T133746
+[2024-05-22T13:37:46.882+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 6 for task wordcount (Cannot execute: spark-submit --master spark://192.168.165.3:7077 --name arrow-spark --deploy-mode client jobs/python/wordcount.py. Error code is: 1.; 565)
+[2024-05-22T13:37:46.891+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-05-22T13:37:46.918+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
